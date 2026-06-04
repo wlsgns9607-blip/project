@@ -1,0 +1,570 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* 색상 팔레트 */
+    --bg-dark: #0F172A;
+    --bg-card: #1E293B;
+    --bg-hover: #334155;
+    --text-primary: #FFFFFF;
+    --text-secondary: #CBD5E1;
+    --accent: #00D9FF;
+    --accent-hover: #00B8D4;
+    --border: #475569;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24'%3E%3Cpath fill='%2300D9FF' stroke='%23ffffff' stroke-width='1.5' stroke-linejoin='round' d='M10 11.5V5.5C10 4.12 11.12 3 12.5 3S15 4.12 15 5.5v3.74c1.21-.81 2-2.18 2-3.74C17 3.01 14.99 1 12.5 1S8 3.01 8 5.5c0 1.56.79 2.93 2 3.74zm9.84 4.63l-4.54-2.26c-.17-.07-.35-.11-.54-.11H14v-6c0-.83-.67-1.5-1.5-1.5S11 7.67 11 8.5v10.74l-3.43-.72c-.08-.01-.15-.03-.24-.03-.31 0-.59.13-.79.33l-.79.8 4.94 4.94c.27.27.65.44 1.06.44h6.79c.75 0 1.33-.55 1.44-1.28l.75-5.27c.01-.07.02-.14.02-.21 0-.62-.38-1.16-.91-1.38z'/%3E%3C/svg%3E") 10 5, auto;
+}
+
+a, button, .nav-link, .btn, .sns-btn, .intro-btn, .project-card {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24'%3E%3Cpath fill='%2300D9FF' stroke='%23ffffff' stroke-width='1.5' stroke-linejoin='round' d='M10 11.5V5.5C10 4.12 11.12 3 12.5 3S15 4.12 15 5.5v3.74c1.21-.81 2-2.18 2-3.74C17 3.01 14.99 1 12.5 1S8 3.01 8 5.5c0 1.56.79 2.93 2 3.74zm9.84 4.63l-4.54-2.26c-.17-.07-.35-.11-.54-.11H14v-6c0-.83-.67-1.5-1.5-1.5S11 7.67 11 8.5v10.74l-3.43-.72c-.08-.01-.15-.03-.24-.03-.31 0-.59.13-.79.33l-.79.8 4.94 4.94c.27.27.65.44 1.06.44h6.79c.75 0 1.33-.55 1.44-1.28l.75-5.27c.01-.07.02-.14.02-.21 0-.62-.38-1.16-.91-1.38z'/%3E%3C/svg%3E") 10 5, pointer !important;
+}
+
+/* ==================== 애니메이션 정의 ==================== */
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes tulipBurst {
+    0% {
+        transform: scale(1) rotateZ(0deg);
+    }
+    50% {
+        transform: scale(1.15) rotateZ(5deg);
+    }
+    100% {
+        transform: scale(1.3) rotateZ(0deg);
+    }
+}
+
+@keyframes tulipGlow {
+    0% {
+        box-shadow: 0 0 0px rgba(0, 217, 255, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(0, 217, 255, 0.6);
+    }
+    100% {
+        box-shadow: 0 15px 40px rgba(0, 217, 255, 0.4);
+    }
+}
+
+/* ==================== 고정 헤더 네비게이션 ==================== */
+header.nav-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    z-index: 999;
+    animation: slideDown 0.5s ease-out;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav a {
+    display: inline-block;
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 12px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent);
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+nav a:hover::after {
+    width: 60%;
+}
+
+nav a.active {
+    color: var(--accent);
+}
+
+nav a.active::after {
+    width: 60%;
+}
+
+/* ==================== 프로필 섹션 ==================== */
+.profile-section {
+    margin-top: 80px;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.05) 0%, rgba(15, 23, 42, 0) 100%);
+    text-align: center;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 30px;
+    border-radius: 16px;
+    overflow: hidden;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+}
+
+.profile-section h1 {
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, var(--accent), var(--text-primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.profile-section .subtitle {
+    font-size: 20px;
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.profile-section p {
+    font-size: 16px;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 40px;
+    line-height: 1.8;
+}
+
+/* ==================== SNS 버튼 (튤립 효과) ==================== */
+.sns-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.sns-btn {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    border: 2px solid var(--border);
+    color: var(--text-primary);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.sns-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--accent);
+    border-radius: 50%;
+    transition: left 0.4s ease;
+    z-index: -1;
+}
+
+.sns-btn:hover {
+    border-color: var(--accent);
+    color: var(--bg-dark);
+    animation: tulipBurst 0.6s ease-out;
+}
+
+.sns-btn:hover::before {
+    left: 0;
+}
+
+.sns-btn:active {
+    animation: tulipGlow 0.8s ease-out;
+}
+
+/* 인스타그램 특수 효과 */
+.sns-btn.instagram {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 25%);
+}
+
+.sns-btn.instagram::before {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%);
+}
+
+.sns-btn.instagram:hover {
+    color: white;
+    animation: tulipBurst 0.6s ease-out, tulipGlow 0.6s ease-out;
+}
+
+/* 노션 특수 효과 */
+.sns-btn.notion {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.sns-btn.notion::before {
+    background: linear-gradient(135deg, #00D9FF, #0099CC);
+}
+
+.sns-btn.notion:hover {
+    color: white;
+    animation: tulipBurst 0.6s ease-out, tulipGlow 0.6s ease-out;
+}
+
+/* ==================== 섹션 일반 스타일 ==================== */
+section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    scroll-margin-top: 100px;
+}
+
+section h2 {
+    font-size: 42px;
+    font-weight: 900;
+    margin-bottom: 60px;
+    text-align: center;
+    background: linear-gradient(135deg, var(--accent), var(--text-primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* ==================== 자기소개서 섹션 ==================== */
+#intro {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.5) 0%, rgba(15, 23, 42, 0) 100%);
+}
+
+.intro-content {
+    background: var(--bg-card);
+    padding: 50px;
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    box-shadow: 0 20px 60px rgba(0, 217, 255, 0.1);
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.intro-content h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--accent);
+}
+
+.intro-content p {
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.intro-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 30px;
+    background: var(--accent);
+    color: var(--bg-dark);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.intro-btn:hover {
+    background: var(--accent-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 217, 255, 0.3);
+}
+
+/* ==================== 프로젝트 섹션 ==================== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.project-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+.project-card:nth-child(1) { animation-delay: 0.2s; }
+.project-card:nth-child(2) { animation-delay: 0.3s; }
+.project-card:nth-child(3) { animation-delay: 0.4s; }
+
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+    box-shadow: 0 20px 60px rgba(0, 217, 255, 0.2);
+}
+
+.project-image {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    padding-top: 20px;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.05);
+}
+
+.project-content {
+    padding: 30px;
+}
+
+.project-content h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--accent);
+}
+
+.project-content p {
+    color: var(--text-secondary);
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+.project-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    flex: 1;
+    min-width: 120px;
+    padding: 12px 20px;
+    border: 2px solid var(--accent);
+    background: transparent;
+    color: var(--accent);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn:hover {
+    background: var(--accent);
+    color: var(--bg-dark);
+    transform: translateY(-3px);
+}
+
+.btn.primary {
+    background: var(--accent);
+    color: var(--bg-dark);
+}
+
+.btn.primary:hover {
+    background: var(--accent-hover);
+    border-color: var(--accent-hover);
+}
+
+/* ==================== 푸터 ==================== */
+footer {
+    text-align: center;
+    padding: 50px 20px;
+    border-top: 1px solid var(--border);
+    color: var(--text-secondary);
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+footer p {
+    margin-bottom: 15px;
+}
+
+footer a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--text-primary);
+}
+
+/* ==================== 반응형 디자인 ==================== */
+@media (max-width: 768px) {
+    nav ul {
+        gap: 5px;
+    }
+
+    nav a {
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+
+    .profile-section {
+        padding: 40px 20px;
+        margin-top: 80px;
+    }
+
+    .profile-section h1 {
+        font-size: 36px;
+    }
+
+    .profile-section .subtitle {
+        font-size: 16px;
+    }
+
+    .sns-btn {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+
+    section {
+        padding: 60px 20px;
+    }
+
+    section h2 {
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+
+    .intro-content {
+        padding: 30px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .project-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        min-width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    header.nav-header {
+        padding: 10px 0;
+    }
+
+    nav ul {
+        gap: 0;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    nav a {
+        padding: 10px 15px;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .profile-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-section h1 {
+        font-size: 28px;
+    }
+
+    .profile-section .subtitle {
+        font-size: 14px;
+    }
+
+    .sns-buttons {
+        gap: 15px;
+    }
+
+    .sns-btn {
+        width: 55px;
+        height: 55px;
+        font-size: 20px;
+    }
+
+    section {
+        padding: 40px 15px;
+    }
+
+    section h2 {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+}
