@@ -4,7 +4,7 @@
 단순한 화면 디자인을 넘어, 실제 고객의 숨겨진 불편을 발견하고 AI 기술을 활용해 구조적인 해결 방향을 설계하는 과정을 담았습니다.
 
 ## 🔗 접속 링크
-- **라이브 페이지**: [포트폴리오 랜딩페이지]([https://wlsgns9607-blip.github.io/Landing_Page/](https://wlsgns9607-blip.github.io/project/)) *(배포 주소에 맞게 수정 필요)*
+- **라이브 페이지**: [포트폴리오 랜딩페이지] [https://wlsgns9607-blip.github.io/Landing_Page/](https://wlsgns9607-blip.github.io/project/)
 
 ---
 
