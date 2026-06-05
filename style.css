@@ -600,7 +600,7 @@ section h2 {
     display: grid;
     grid-template-columns: repeat(2, auto);
     justify-content: start;
-    column-gap: 150px;
+    column-gap: 80px;
     row-gap: 30px;
     align-items: center;
 }
