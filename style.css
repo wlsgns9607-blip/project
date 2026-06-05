@@ -643,12 +643,6 @@ section h2 {
     cursor: pointer;
 }
 
-.readme-icon {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-}
-
 .readme-text-btn:hover {
     background: var(--accent);
     color: var(--bg-dark);
