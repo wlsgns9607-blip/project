@@ -179,6 +179,7 @@ nav a.active::after {
 
 .nav-user-link:hover img {
     transform: scale(1.2);
+    animation: tulipBurst 0.6s ease-out, tulipGlow 0.6s ease-out;
 }
 
 /* ==================== 프로필 섹션 ==================== */
