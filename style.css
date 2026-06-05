@@ -624,32 +624,17 @@ section h2 {
     animation: tulipBurst 0.6s ease-out, tulipGlow 0.6s ease-out;
 }
 
-.readme-text-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    flex: 1;
-    min-width: 130px;
+.readme-text-span {
     color: var(--accent);
-    text-decoration: none;
     font-weight: 700;
     font-size: 15px;
-    cursor: pointer;
-}
-
-.readme-text-span {
     transition: all 0.3s ease;
     display: inline-block;
+    cursor: default;
 }
 
-.readme-text-btn:hover .readme-text-span {
+.readme-text-span:hover {
     color: #fff;
-    transform: scale(1.1);
-    animation: tulipBurst 0.6s ease-out, tulipGlow 0.6s ease-out;
-}
-
-.readme-text-btn:hover .car-app-img {
     transform: scale(1.1);
     animation: tulipBurst 0.6s ease-out, tulipGlow 0.6s ease-out;
 }
