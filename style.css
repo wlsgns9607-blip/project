@@ -161,6 +161,26 @@ nav a.active::after {
     width: 60%;
 }
 
+.nav-user-link {
+    padding: 0 5px !important;
+}
+
+.nav-user-link::after {
+    display: none !important;
+}
+
+.nav-user-link img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+    vertical-align: middle;
+}
+
+.nav-user-link:hover img {
+    transform: scale(1.2);
+}
+
 /* ==================== 프로필 섹션 ==================== */
 .profile-section {
     margin-top: 80px;
