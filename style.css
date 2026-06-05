@@ -461,22 +461,36 @@ section h2 {
     box-shadow: 0 10px 25px rgba(0, 217, 255, 0.3);
 }
 
-.intro-user-link {
+.intro-buttons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.intro-user-link, .intro-github-link {
     display: inline-block;
     border-radius: 50%;
 }
 
-.intro-user-img {
+.intro-user-img, .intro-github-img {
     width: 60px;
     height: 60px;
-    margin-top: 25px;
     border-radius: 50%;
     cursor: pointer;
     background: rgba(255, 255, 255, 0.05);
     transition: all 0.3s ease;
 }
 
-.intro-user-img:hover {
+.intro-github-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: var(--text-primary);
+}
+
+.intro-user-img:hover, .intro-github-img:hover {
     animation: tulipBurst 0.6s ease-out, tulipGlow 0.6s ease-out;
 }
 
