@@ -56,7 +56,7 @@
 
 ## 📬 Contact
 - **Email**: wlsgns1996@naver.com
-- **GitHub**: [wlsgns9607-blip](https://github.com/dashboard)
+- **GitHub**: [wlsgns9607-blip](https://github.com/wlsgns9607-blip/project)
 - **Instagram**: [@reason_first.jh](https://www.instagram.com/reason_first.jh/)
 - **Notion**: [About Me & 상세 포트폴리오](https://app.notion.com/p/365c44c0ce60807c88d8cbcf588c5c53?source=copy_link)
 - **Notefolio**: [UI/UX 디자인 작업물](https://notefolio.net/)
