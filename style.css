@@ -597,9 +597,9 @@ section h2 {
 }
 
 .project-buttons {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
     align-items: center;
 }
 
