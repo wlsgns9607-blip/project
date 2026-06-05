@@ -304,20 +304,7 @@ nav a.active::after {
     animation: tulipBurst 0.6s ease-out, tulipGlow 0.6s ease-out;
 }
 
-/* About Me 특수 효과 */
-.sns-btn.aboutme {
-    background: rgba(0, 217, 255, 0.1);
-    color: var(--accent);
-}
 
-.sns-btn.aboutme::before {
-    background: linear-gradient(135deg, #00D9FF, #0055FF);
-}
-
-.sns-btn.aboutme:hover {
-    color: white;
-    animation: tulipBurst 0.6s ease-out, tulipGlow 0.6s ease-out;
-}
 
 /* 노트폴리오 특수 효과 */
 .sns-btn.notefolio {
