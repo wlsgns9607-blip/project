@@ -603,6 +603,12 @@ section h2 {
     align-items: center;
 }
 
+.zigzag-item {
+    position: relative;
+    left: 40px;
+    top: -10px;
+}
+
 .car-app-link {
     display: inline-flex;
     justify-content: center;
