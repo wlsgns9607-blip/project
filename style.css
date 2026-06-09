@@ -537,7 +537,7 @@ section h2 {
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: 16px;
-    overflow: hidden;
+    /* overflow: hidden; Removed to prevent the tooltip from getting clipped at the edges! */
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -556,6 +556,10 @@ section h2 {
         height: auto;
         min-height: 350px;
         padding: 40px;
+        border-radius: 16px 0 0 16px; /* Desktop border radius */
+    }
+    .project-card.reverse .project-image {
+        border-radius: 0 16px 16px 0; /* Desktop reverse border radius */
     }
     .project-content {
         width: 50%;
@@ -579,6 +583,7 @@ section h2 {
     object-fit: contain;
     transition: transform 0.3s ease;
     padding-top: 20px;
+    border-radius: 16px 16px 0 0; /* To maintain rounded corners without overflow:hidden */
 }
 
 @media (min-width: 800px) {
@@ -611,7 +616,7 @@ section h2 {
     display: grid;
     grid-template-columns: repeat(2, auto);
     justify-content: start;
-    column-gap: 40px; /* 텍스트 추가로 인해 간격 조정 */
+    column-gap: 120px; /* 마우스 오버 시 우측에 뜨는 툴팁이 옆 칼럼을 가리지 않도록 넉넉한 공간 확보 */
     row-gap: 30px;
     align-items: center;
 }
@@ -636,7 +641,7 @@ section h2 {
     content: attr(title);
     position: absolute;
     top: 50%;
-    left: calc(100% + 15px); /* 우측에 배치 */
+    left: calc(50% + 35px); /* 중앙에서부터 계산하여 아이콘(48px) 바로 옆에 딱 붙게 배치! */
     transform: translateY(-50%);
     background: #FFFFFF; /* 피그마 스크린샷과 동일한 흰색 배경 */
     color: #000000; /* 검은색 텍스트 */
