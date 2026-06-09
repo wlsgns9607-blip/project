@@ -305,55 +305,5 @@
             rootMargin: "0px 0px -50px 0px"
         });
 
-        revealElements.forEach(el => revealObserver.observe(el));
-    </script>
-    <!-- 탭(Tab) 메뉴 UI 스크립트 (기획자님 요청사항 적용) -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.project-card').forEach(card => {
-                const p = card.querySelector('.project-content p');
-                // 기존 설명글을 저장해둡니다.
-                const defaultText = p.innerHTML;
-                
-                // 부드러운 전환을 위해 transition 추가
-                p.style.transition = 'opacity 0.2s ease-in-out';
-                p.style.minHeight = '120px'; // 텍스트가 짧아져도 레이아웃이 안 깨지게 고정
-                
-                const buttons = card.querySelectorAll('.car-app-link');
-                buttons.forEach(btn => {
-                    const link = btn.getAttribute('href');
-                    const title = btn.getAttribute('data-tooltip') || '바로가기';
-                    
-                    btn.addEventListener('click', (e) => {
-                        e.preventDefault(); // 기본 링크 이동 방지
-                        
-                        // 이미 활성화된 탭을 다시 누르면 원래 설명으로 돌아감
-                        if (btn.classList.contains('active-tab')) {
-                            btn.classList.remove('active-tab');
-                            p.style.opacity = 0;
-                            setTimeout(() => {
-                                p.innerHTML = defaultText;
-                                p.style.opacity = 1;
-                            }, 200);
-                            return;
-                        }
-                        
-                        // 다른 탭들의 활성화 상태 해제
-                        buttons.forEach(b => b.classList.remove('active-tab'));
-                        btn.classList.add('active-tab');
-                        
-                        // 텍스트 스위칭 애니메이션
-                        p.style.opacity = 0;
-                        setTimeout(() => {
-                            p.innerHTML = `<span style="color: var(--accent); font-weight: 900; font-size: 18px;">[${title}]</span><br>
-                            <span style="color: var(--text-secondary); display: inline-block; margin-top: 10px;">아이콘에 해당하는 상세 페이지로 이동하여 직접 확인해 보세요.</span><br>
-                            <a href="${link}" target="_blank" class="btn primary" style="padding: 8px 20px; font-size: 14px; margin-top: 15px; border-radius: 8px; font-weight: 600;">🚀 ${title} 이동하기</a>`;
-                            p.style.opacity = 1;
-                        }, 200);
-                    });
-                });
-            });
-        });
-    </script>
 </body>
 </html>
