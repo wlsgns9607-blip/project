@@ -631,48 +631,30 @@ section h2 {
     position: relative;
 }
 
-/* 커스텀 툴팁 (마우스를 올렸을 때만 우측에 나타나며, 마우스를 떼기 전까지 무한 유지됨) */
+/* 커스텀 툴팁 (마우스를 올렸을 때 우측에 나타나며 무한 유지됨 - 기획자님 피그마 디자인 반영) */
 .car-app-link::after {
     content: attr(title);
     position: absolute;
     top: 50%;
-    left: calc(100% + 15px); /* 우측에 말풍선 띄우기 */
+    left: calc(100% + 15px); /* 우측에 배치 */
     transform: translateY(-50%);
-    background: rgba(15, 23, 42, 0.95);
-    border: 1px solid var(--accent);
-    color: var(--text-primary);
-    padding: 6px 14px;
-    border-radius: 8px;
-    font-size: 13px;
-    font-weight: 500;
+    background: #FFFFFF; /* 피그마 스크린샷과 동일한 흰색 배경 */
+    color: #000000; /* 검은색 텍스트 */
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 600;
     white-space: nowrap;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: all 0.3s ease;
+    transition: opacity 0.2s ease;
     z-index: 100;
-    box-shadow: 0 5px 15px rgba(0, 217, 255, 0.2);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15); /* 살짝 떠보이는 그림자 */
+    border-radius: 2px; /* 살짝 각진 형태 */
 }
 
-/* 툴팁 말풍선 꼬리 (왼쪽 화살표) */
-.car-app-link::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: calc(100% + 9px);
-    transform: translateY(-50%);
-    border-width: 6px;
-    border-style: solid;
-    border-color: transparent var(--accent) transparent transparent;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    z-index: 100;
-}
-
-/* 마우스를 올리면 툴팁이 나타나고 무한 유지됨 */
-.car-app-link:hover::after,
-.car-app-link:hover::before {
+/* 마우스를 올리면 툴팁(흰색 박스)이 나타나고 무한 유지됨 */
+.car-app-link:hover::after {
     opacity: 1;
     visibility: visible;
 }
@@ -806,12 +788,6 @@ footer a:hover {
         left: 50%;
         top: 130%;
         transform: translateX(-50%);
-    }
-    .car-app-link::before {
-        left: 50%;
-        top: 100%;
-        transform: translateX(-50%);
-        border-color: transparent transparent var(--accent) transparent;
     }
 
     .btn {
