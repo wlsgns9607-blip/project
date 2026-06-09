@@ -644,8 +644,8 @@ section h2 {
     display: inline-block;
     max-width: 0;
     opacity: 0;
-    font-size: 18px; /* 기획자님 요청으로 텍스트 크기 키움 (기존 15px -> 18px) */
-    font-weight: 700; /* 좀 더 두껍고 명확하게 보이도록 수정 */
+    font-size: 20px; /* 기획자님 요청으로 20px로 확 키움! */
+    font-weight: 700;
     color: var(--text-primary);
     white-space: nowrap;
     overflow: hidden;
@@ -662,9 +662,9 @@ section h2 {
 }
 
 .car-app-link:hover::after {
-    max-width: 300px; /* 텍스트가 커졌으므로 잘리지 않게 공간 여유 있게 확보 */
+    max-width: 350px; /* 20px 텍스트가 들어갈 수 있도록 더 넓게 확보 */
     opacity: 1;
-    margin-left: 14px; /* 텍스트 크기에 맞춰 간격 살짝 넓힘 */
+    margin-left: 16px; /* 아이콘과 텍스트 사이 간격도 약간 더 넓힘 */
 }
 
 .car-app-img {
