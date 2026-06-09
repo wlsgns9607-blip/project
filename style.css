@@ -637,33 +637,42 @@ section h2 {
     text-decoration: none;
 }
 
-/* 커스텀 툴팁 (피그마 디자인 완벽 복구 + 텍스트 크기 20px + 부드러운 슬라이드 효과) */
+/* 방법 2: 마우스 오버(Hover) 시 슬라이딩 텍스트 노출 (최고급 심플 UX) */
 .car-app-link::after {
     content: attr(data-tooltip);
     position: absolute;
     top: 50%;
-    left: calc(50% + 35px); /* 아이콘(48px) 바로 우측에 딱 붙게 고정 */
-    transform: translateY(-50%) translateX(-10px); /* 나타날 때 약간 좌측에서 우측으로 밀려 나오게 준비 */
-    background: #FFFFFF; /* 피그마와 동일한 흰색 박스 */
-    color: #000000;
-    padding: 10px 16px;
-    font-size: 20px; /* 기획자님 요청하신 20px 텍스트! */
+    left: calc(50% + 24px); /* 아이콘(48px)의 바로 오른쪽 끝에서 시작 */
+    transform: translateY(-50%);
+    
+    /* 심플하고 고급스러운 텍스트 스타일 (흰색 덩어리 배경 완전 제거!) */
+    color: var(--text-primary);
+    font-size: 20px; /* 요청하신 20px 크기 */
     font-weight: 700;
     white-space: nowrap;
+    
+    /* 슬라이딩 효과를 위한 초기 설정 */
+    max-width: 0;
     opacity: 0;
-    visibility: hidden;
+    overflow: hidden;
+    margin-left: 0;
+    
+    /* 기존 피그마(방법 1)의 흰색 배경/패딩/그림자 모두 제거 */
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
     pointer-events: none;
-    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-    z-index: 100;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
-    border-radius: 2px;
+    
+    transition: max-width 0.5s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.4s ease, margin-left 0.4s ease;
+    z-index: 100; /* 레이아웃 깨짐(밀림)을 완벽 방지하는 공중부양(Absolute) */
 }
 
-/* 마우스를 올리면 부드럽게 슥- 슬라이딩되며 텍스트 등장 */
+/* 마우스를 올리면 아이콘 옆에서 텍스트가 슥- 나타남 */
 .car-app-link:hover::after {
+    max-width: 350px;
     opacity: 1;
-    visibility: visible;
-    transform: translateY(-50%) translateX(0); /* 원래 자리로 미끄러져 들어옴 */
+    margin-left: 16px; /* 부드럽게 우측으로 밀려나며 등장 */
 }
 
 .car-app-img {
