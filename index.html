@@ -30,7 +30,7 @@
                 <li><a href="#bubble" class="nav-link">Bubble Mate</a></li>
                 <li><a href="#farming" class="nav-link">든든농사</a></li>
                 <li><a href="#notefolio" class="nav-link">노트폴리오</a></li>
-                <li><a href="https://github.com/?locale=ko-kr" target="_blank" rel="noopener noreferrer" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
+                <li><a href="https://github.com/wlsgns9607-blip" target="_blank" rel="noopener noreferrer" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
             </ul>
         </nav>
     </header>
@@ -249,11 +249,13 @@
         // 링크 클릭 시 스크롤 (부드러운 스크롤)
         document.querySelectorAll('.nav-link').forEach(link => {
             link.addEventListener('click', function(e) {
-                e.preventDefault();
                 const targetId = this.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
-                if (targetSection) {
-                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                if (targetId && targetId.startsWith('#')) {
+                    e.preventDefault();
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
                 }
             });
         });
