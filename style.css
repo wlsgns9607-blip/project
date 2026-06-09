@@ -638,7 +638,7 @@ section h2 {
 
 /* 커스텀 툴팁 (마우스를 올렸을 때 우측에 나타나며 무한 유지됨 - 기획자님 피그마 디자인 반영) */
 .car-app-link::after {
-    content: attr(title);
+    content: attr(data-tooltip);
     position: absolute;
     top: 50%;
     left: calc(50% + 35px); /* 중앙에서부터 계산하여 아이콘(48px) 바로 옆에 딱 붙게 배치! */
