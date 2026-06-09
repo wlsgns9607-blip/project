@@ -624,32 +624,57 @@ section h2 {
 
 .car-app-link {
     display: inline-flex;
-    justify-content: flex-start; /* 좌측 정렬로 텍스트와 자연스럽게 배치 */
+    justify-content: center; /* 원래의 깔끔한 중앙 정렬로 복구 */
     align-items: center;
-    gap: 12px; /* 아이콘과 텍스트 사이 간격 */
     flex: 1;
     min-width: 120px;
     position: relative;
-    text-decoration: none;
 }
 
-/* 아이콘 옆에 항상 텍스트가 붙어있도록 변경 (기획자님 요청사항) */
+/* 커스텀 툴팁 (마우스를 올렸을 때만 우측에 나타나며, 마우스를 떼기 전까지 무한 유지됨) */
 .car-app-link::after {
     content: attr(title);
-    position: static; /* absolute 대신 static으로 변경하여 그리드 영역 차지하게 함 */
-    display: inline-block;
-    color: var(--text-secondary);
-    font-size: 15px;
-    font-weight: 600;
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 15px); /* 우측에 말풍선 띄우기 */
+    transform: translateY(-50%);
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid var(--accent);
+    color: var(--text-primary);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
     white-space: nowrap;
-    opacity: 1; /* 튤립효과(글씨)가 꺼지지 않고 항상 무한 유지됨 */
+    opacity: 0;
+    visibility: hidden;
     pointer-events: none;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    z-index: 100;
+    box-shadow: 0 5px 15px rgba(0, 217, 255, 0.2);
 }
 
-/* 마우스를 올리면 글씨 색상이 예쁘게 바뀜 */
-.car-app-link:hover::after {
-    color: var(--accent);
+/* 툴팁 말풍선 꼬리 (왼쪽 화살표) */
+.car-app-link::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 9px);
+    transform: translateY(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: transparent var(--accent) transparent transparent;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+/* 마우스를 올리면 툴팁이 나타나고 무한 유지됨 */
+.car-app-link:hover::after,
+.car-app-link:hover::before {
+    opacity: 1;
+    visibility: visible;
 }
 
 .car-app-img {
@@ -776,10 +801,17 @@ footer a:hover {
         row-gap: 20px;
     }
 
-    /* 모바일에서도 옆에 텍스트가 잘 보이도록 유지 */
+    /* 모바일에서는 툴팁이 아이콘 아래에 표시되도록 조정 */
     .car-app-link::after {
-        opacity: 1;
-        font-size: 14px;
+        left: 50%;
+        top: 130%;
+        transform: translateX(-50%);
+    }
+    .car-app-link::before {
+        left: 50%;
+        top: 100%;
+        transform: translateX(-50%);
+        border-color: transparent transparent var(--accent) transparent;
     }
 
     .btn {
