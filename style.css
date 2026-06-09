@@ -628,6 +628,37 @@ section h2 {
     align-items: center;
     flex: 1;
     min-width: 120px;
+    position: relative;
+}
+
+/* 커스텀 툴팁(튤립) 효과 - HTML의 title 속성을 읽어와서 예쁜 뱃지로 띄워줌 */
+.car-app-link::after {
+    content: attr(title);
+    position: absolute;
+    top: 110%; /* 아이콘 바로 아래 */
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg-card);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* PC에서는 마우스 올릴 때만 툴팁 표시 */
+@media (min-width: 769px) {
+    .car-app-link:hover::after {
+        opacity: 1;
+        top: 120%;
+    }
 }
 
 .car-app-img {
@@ -751,6 +782,13 @@ footer a:hover {
 
     .project-buttons {
         flex-direction: column;
+        row-gap: 40px; /* 모바일에서 툴팁 글씨가 들어갈 세로 공간 확보 */
+    }
+
+    /* 모바일에서는 툴팁(튤립) 글씨가 안 사라지고 항상 예쁘게 고정되도록! */
+    .car-app-link::after {
+        opacity: 1;
+        top: 115%;
     }
 
     .btn {
