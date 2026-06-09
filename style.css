@@ -611,7 +611,7 @@ section h2 {
     display: grid;
     grid-template-columns: repeat(2, auto);
     justify-content: start;
-    column-gap: 80px;
+    column-gap: 40px; /* 텍스트 추가로 인해 간격 조정 */
     row-gap: 30px;
     align-items: center;
 }
@@ -624,20 +624,20 @@ section h2 {
 
 .car-app-link {
     display: inline-flex;
-    justify-content: center;
+    justify-content: flex-start; /* 좌측 정렬로 텍스트와 자연스럽게 배치 */
     align-items: center;
+    gap: 12px; /* 아이콘과 텍스트 사이 간격 */
     flex: 1;
     min-width: 120px;
     position: relative;
+    text-decoration: none;
 }
 
 /* 아이콘 옆에 항상 텍스트가 붙어있도록 변경 (기획자님 요청사항) */
 .car-app-link::after {
     content: attr(title);
-    position: absolute;
-    top: 50%;
-    left: calc(100% + 12px); /* 아이콘 우측에 배치 */
-    transform: translateY(-50%);
+    position: static; /* absolute 대신 static으로 변경하여 그리드 영역 차지하게 함 */
+    display: inline-block;
     color: var(--text-secondary);
     font-size: 15px;
     font-weight: 600;
