@@ -307,5 +307,46 @@
 
         revealElements.forEach(el => revealObserver.observe(el));
     </script>
+    
+    <!-- 아이콘 호버 시 빈 공간에 텍스트 나타나게 하는 스크립트 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.project-card').forEach(card => {
+                const btnContainer = card.querySelector('.project-buttons');
+                if (!btnContainer) return;
+                
+                // 버튼들 아래에 빈 공간(텍스트 상자) 생성
+                const descBox = document.createElement('div');
+                descBox.className = 'hover-desc-box';
+                // 기본 안내 텍스트 (원하시면 비워두셔도 됩니다)
+                descBox.innerHTML = '<span style="opacity: 0.5;">아이콘에 마우스를 올려보세요</span>';
+                descBox.classList.add('show');
+                
+                // 버튼 컨테이너 다음에 추가
+                btnContainer.parentNode.insertBefore(descBox, btnContainer.nextSibling);
+                
+                const buttons = btnContainer.querySelectorAll('.car-app-link');
+                buttons.forEach(btn => {
+                    const tooltipText = btn.getAttribute('data-tooltip') || '바로가기';
+                    
+                    btn.addEventListener('mouseenter', () => {
+                        descBox.classList.remove('show');
+                        setTimeout(() => {
+                            descBox.innerHTML = `<span style="color: var(--accent); font-weight: 700;">[${tooltipText}]</span> 아이콘을 클릭하여 이동해 보세요.`;
+                            descBox.classList.add('show');
+                        }, 150);
+                    });
+                    
+                    btn.addEventListener('mouseleave', () => {
+                        descBox.classList.remove('show');
+                        setTimeout(() => {
+                            descBox.innerHTML = '<span style="opacity: 0.5;">아이콘에 마우스를 올려보세요</span>';
+                            descBox.classList.add('show');
+                        }, 150);
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
