@@ -647,7 +647,7 @@ section h2 {
     
     /* 심플하고 고급스러운 텍스트 스타일 (흰색 덩어리 배경 완전 제거!) */
     color: var(--text-primary);
-    font-size: 20px; /* 요청하신 20px 크기 */
+    font-size: 25px; /* 기획자님 요청하신 25px 크기로 초대형 확대! */
     font-weight: 700;
     white-space: nowrap;
     
@@ -670,9 +670,9 @@ section h2 {
 
 /* 마우스를 올리면 아이콘 옆에서 텍스트가 슥- 나타남 */
 .car-app-link:hover::after {
-    max-width: 350px;
+    max-width: 400px; /* 25px 텍스트가 안 잘리도록 공간 더 넓힘 */
     opacity: 1;
-    margin-left: 16px; /* 부드럽게 우측으로 밀려나며 등장 */
+    margin-left: 18px; /* 글씨가 커진 만큼 아이콘과의 간격도 약간 조정 */
 }
 
 .car-app-img {
