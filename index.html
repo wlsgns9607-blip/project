@@ -45,13 +45,13 @@
         
         <!-- SNS 버튼 -->
         <div class="sns-buttons">
-            <a href="https://www.instagram.com/reason_first.jh/" target="_blank" rel="noopener noreferrer" class="sns-btn instagram" title="Instagram">
+            <a href="https://www.instagram.com/reason_first.jh/" target="_blank" rel="noopener noreferrer" class="sns-btn instagram hover-target-btn" data-tooltip="Instagram">
                 <i class="fab fa-instagram"></i>
             </a>
-            <a href="https://app.notion.com/p/365c44c0ce60807c88d8cbcf588c5c53?source=copy_link" target="_blank" rel="noopener noreferrer" class="sns-btn notion" title="Notion">
+            <a href="https://app.notion.com/p/365c44c0ce60807c88d8cbcf588c5c53?source=copy_link" target="_blank" rel="noopener noreferrer" class="sns-btn notion hover-target-btn" data-tooltip="Notion">
                 <img src="https://img.icons8.com/color/512/notion--v2.png" alt="Notion" style="width: 36px; height: 36px;">
             </a>
-            <a href="https://github.com/wlsgns9607-blip/project" target="_blank" rel="noopener noreferrer" class="sns-btn github" title="GitHub">
+            <a href="https://github.com/wlsgns9607-blip/project" target="_blank" rel="noopener noreferrer" class="sns-btn github hover-target-btn" data-tooltip="GitHub">
                 <i class="fab fa-github"></i>
             </a>
         </div>
@@ -89,10 +89,10 @@
             <p>단순한 화면 디자인을 넘어, 실제 고객의 숨겨진 불편을 발견하고 AI 기술을 활용해 구조적인 해결 방향을 설계하는 것을 좋아합니다.</p>
             <p>아래 포트폴리오를 통해 제가 현장의 문제를 어떻게 디지털 경험으로 해결해왔는지 보여드리겠습니다.</p>
             <div class="intro-buttons">
-                <a href="https://wlsgns9607-blip.github.io/inp/" target="_blank" rel="noopener noreferrer" class="intro-user-link" title="About Me">
+                <a href="https://wlsgns9607-blip.github.io/inp/" target="_blank" rel="noopener noreferrer" class="intro-user-link hover-target-btn" data-tooltip="About Me 상세보기">
                     <img src="img/user.png" alt="About Me" class="intro-user-img">
                 </a>
-                <a href="https://github.com/wlsgns9607-blip/inp" target="_blank" rel="noopener noreferrer" class="intro-github-link" title="GitHub">
+                <a href="https://github.com/wlsgns9607-blip/inp" target="_blank" rel="noopener noreferrer" class="intro-github-link hover-target-btn" data-tooltip="GitHub 소스코드">
                     <i class="fab fa-github intro-github-img"></i>
                 </a>
             </div>
@@ -311,21 +311,31 @@
     <!-- 아이콘 호버 시 빈 공간에 텍스트 나타나게 하는 스크립트 -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.project-card').forEach(card => {
-                const btnContainer = card.querySelector('.project-buttons');
-                if (!btnContainer) return;
-                
+            // 호버 효과를 적용할 모든 버튼 컨테이너 배열
+            const buttonContainers = [
+                ...document.querySelectorAll('.project-buttons'),
+                document.querySelector('.intro-buttons'),
+                document.querySelector('.sns-buttons')
+            ].filter(Boolean);
+
+            buttonContainers.forEach(btnContainer => {
                 // 버튼들 아래에 빈 공간(텍스트 상자) 생성
                 const descBox = document.createElement('div');
                 descBox.className = 'hover-desc-box';
-                // 기본 안내 텍스트 (원하시면 비워두셔도 됩니다)
                 descBox.innerHTML = '<span style="opacity: 0.5;">아이콘에 마우스를 올려보세요</span>';
                 descBox.classList.add('show');
+                
+                // intro-buttons나 sns-buttons의 경우 좀 더 중앙 정렬이나 여백이 필요할 수 있음
+                if (btnContainer.classList.contains('intro-buttons') || btnContainer.classList.contains('sns-buttons')) {
+                    descBox.style.textAlign = 'center';
+                    descBox.style.marginTop = '10px';
+                }
                 
                 // 버튼 컨테이너 다음에 추가
                 btnContainer.parentNode.insertBefore(descBox, btnContainer.nextSibling);
                 
-                const buttons = btnContainer.querySelectorAll('.car-app-link');
+                // 해당 컨테이너 안의 타겟 버튼들 (포트폴리오 아이콘 + 그 외 추가된 클래스)
+                const buttons = btnContainer.querySelectorAll('.car-app-link, .hover-target-btn');
                 buttons.forEach(btn => {
                     const tooltipText = btn.getAttribute('data-tooltip') || '바로가기';
                     
