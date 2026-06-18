@@ -337,19 +337,7 @@ nav a.active::after {
 
 
 
-/* 노트폴리오 특수 효과 */
-.sns-btn.notefolio {
-    background: rgba(0, 195, 137, 0.1); /* 노트폴리오 시그니처 민트/그린 색상 */
-}
 
-.sns-btn.notefolio::before {
-    background: linear-gradient(135deg, #00C389, #00A675);
-}
-
-.sns-btn.notefolio:hover {
-    color: white;
-    animation: tulipBurst 0.6s ease-out, tulipGlow 0.6s ease-out;
-}
 
 /* ==================== 스킬 배지 섹션 ==================== */
 .skills-container {

@@ -38,9 +38,6 @@
 - 큰 글씨와 직관적인 인터페이스로 사용성 극대화.
 - 복잡한 농사 정보를 편하게 관리할 수 있는 UX 디자인 적용.
 
-### 4. UI/UX Design (Notefolio)
-> **디자인 산출물 및 기획 포트폴리오**
-- 단순한 개발을 넘어 사용자 중심의 UI/UX 기획과 디자인 과정(와이어프레임 등)을 아카이빙.
 
 ---
 
@@ -59,4 +56,4 @@
 - **GitHub**: [wlsgns9607-blip](https://github.com/wlsgns9607-blip/project)
 - **Instagram**: [@reason_first.jh](https://www.instagram.com/reason_first.jh/)
 - **Notion**: [About Me & 상세 포트폴리오](https://app.notion.com/p/365c44c0ce60807c88d8cbcf588c5c53?source=copy_link)
-- **Notefolio**: [UI/UX 디자인 작업물](https://notefolio.net/)
+
