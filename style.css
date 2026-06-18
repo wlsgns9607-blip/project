@@ -725,6 +725,7 @@ footer a:hover {
         flex-wrap: nowrap;
         overflow-x: auto;
         justify-content: flex-start;
+        align-items: center;
         padding: 10px 10px;
         gap: 8px;
         -webkit-overflow-scrolling: touch;
@@ -788,8 +789,20 @@ footer a:hover {
         flex-wrap: wrap;
         gap: 12px;
         justify-content: flex-start;
-        column-gap: normal;
-        row-gap: normal;
+    }
+
+    .car-app-link {
+        min-width: auto;
+        flex: none;
+    }
+
+    .hover-desc-box {
+        display: none !important;
+    }
+
+    nav li {
+        display: flex;
+        align-items: center;
     }
 
     .zigzag-item {
