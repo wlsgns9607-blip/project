@@ -714,18 +714,37 @@ footer a:hover {
 
 /* ==================== 반응형 디자인 ==================== */
 @media (max-width: 768px) {
+    nav {
+        width: 100%;
+        padding: 0 5px;
+    }
+
     nav ul {
-        gap: 5px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding: 10px 10px;
+        gap: 8px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Hide scrollbar Firefox */
+        width: 100%;
+    }
+
+    nav ul::-webkit-scrollbar {
+        display: none; /* Hide scrollbar Chrome/Safari */
     }
 
     nav a {
-        padding: 10px 12px;
-        font-size: 12px;
+        padding: 8px 12px;
+        font-size: 13px;
+        white-space: nowrap;
     }
 
     .profile-section {
         padding: 40px 20px;
-        margin-top: 80px;
+        margin-top: 60px;
     }
 
     .profile-section h1 {
@@ -760,9 +779,22 @@ footer a:hover {
         gap: 30px;
     }
 
+    .project-image {
+        height: 220px;
+    }
+
     .project-buttons {
-        flex-direction: column;
-        row-gap: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: flex-start;
+        column-gap: normal;
+        row-gap: normal;
+    }
+
+    .zigzag-item {
+        left: 0;
+        top: 0;
     }
 
     /* 모바일에서는 툴팁이 아이콘 아래에 표시되도록 조정 */
@@ -779,19 +811,16 @@ footer a:hover {
 
 @media (max-width: 480px) {
     header.nav-header {
-        padding: 10px 0;
+        padding: 5px 0;
     }
 
     nav ul {
-        gap: 0;
-        flex-direction: column;
-        align-items: stretch;
+        padding: 8px 5px;
     }
 
     nav a {
-        padding: 10px 15px;
+        padding: 6px 10px;
         font-size: 12px;
-        text-align: center;
     }
 
     .profile-image {
@@ -824,5 +853,9 @@ footer a:hover {
     section h2 {
         font-size: 24px;
         margin-bottom: 30px;
+    }
+
+    .project-content {
+        padding: 20px;
     }
 }
