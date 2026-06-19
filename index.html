@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     
     <!-- External CSS -->
-    <link rel="stylesheet" href="style.css?v=3.0">
+    <link rel="stylesheet" href="style.css?v=4.0">
 </head>
 <body>
     <!-- 고정 헤더 네비게이션 -->
@@ -341,48 +341,50 @@
         revealElements.forEach(el => revealObserver.observe(el));
 
         // 모바일 사이드 드로어 메뉴 제어 로직
-        const hamburgerBtn = document.getElementById('hamburger-btn');
-        const drawerCloseBtn = document.getElementById('drawer-close-btn');
-        const drawerBackdrop = document.getElementById('drawer-backdrop');
-        const drawer = document.getElementById('drawer');
-        const drawerLinks = document.querySelectorAll('.drawer-link');
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const drawerCloseBtn = document.getElementById('drawer-close-btn');
+            const drawerBackdrop = document.getElementById('drawer-backdrop');
+            const drawer = document.getElementById('drawer');
+            const drawerLinks = document.querySelectorAll('.drawer-link');
 
-        function openDrawer() {
-            if (drawer && drawerBackdrop) {
-                drawer.classList.add('open');
-                drawerBackdrop.classList.add('open');
-                document.body.style.overflow = 'hidden'; // 스크롤 방지
-            }
-        }
-
-        function closeDrawer() {
-            if (drawer && drawerBackdrop) {
-                drawer.classList.remove('open');
-                drawerBackdrop.classList.remove('open');
-                document.body.style.overflow = ''; // 스크롤 방지 해제
-            }
-        }
-
-        if (hamburgerBtn) hamburgerBtn.addEventListener('click', openDrawer);
-        if (drawerCloseBtn) drawerCloseBtn.addEventListener('click', closeDrawer);
-        if (drawerBackdrop) drawerBackdrop.addEventListener('click', closeDrawer);
-
-        // 드로어 메뉴 링크 클릭 시 드로어 닫고 해당 섹션으로 부드러운 스크롤
-        drawerLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                const targetId = link.getAttribute('href');
-                if (targetId && targetId.startsWith('#')) {
-                    e.preventDefault();
-                    closeDrawer();
-                    
-                    // 스무스 스크롤 이동
-                    setTimeout(() => {
-                        const targetSection = document.querySelector(targetId);
-                        if (targetSection) {
-                            targetSection.scrollIntoView({ behavior: 'smooth' });
-                        }
-                    }, 300); // 드로어가 닫히는 시간 확보
+            function openDrawer() {
+                if (drawer && drawerBackdrop) {
+                    drawer.classList.add('open');
+                    drawerBackdrop.classList.add('open');
+                    document.body.style.overflow = 'hidden'; // 스크롤 방지
                 }
+            }
+
+            function closeDrawer() {
+                if (drawer && drawerBackdrop) {
+                    drawer.classList.remove('open');
+                    drawerBackdrop.classList.remove('open');
+                    document.body.style.overflow = ''; // 스크롤 방지 해제
+                }
+            }
+
+            if (hamburgerBtn) hamburgerBtn.addEventListener('click', openDrawer);
+            if (drawerCloseBtn) drawerCloseBtn.addEventListener('click', closeDrawer);
+            if (drawerBackdrop) drawerBackdrop.addEventListener('click', closeDrawer);
+
+            // 드로어 메뉴 링크 클릭 시 드로어 닫고 해당 섹션으로 부드러운 스크롤
+            drawerLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const targetId = link.getAttribute('href');
+                    if (targetId && targetId.startsWith('#')) {
+                        e.preventDefault();
+                        closeDrawer();
+                        
+                        // 스무스 스크롤 이동
+                        setTimeout(() => {
+                            const targetSection = document.querySelector(targetId);
+                            if (targetSection) {
+                                targetSection.scrollIntoView({ behavior: 'smooth' });
+                            }
+                        }, 300); // 드로어가 닫히는 시간 확보
+                    }
+                });
             });
         });
     </script>
