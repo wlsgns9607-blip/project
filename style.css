@@ -106,15 +106,128 @@ header.nav-header {
 }
 
 .hamburger-btn {
-    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: 20px;
+    transition: all 0.3s ease;
 }
 
+.hamburger-btn:hover {
+    color: var(--accent);
+    transform: scale(1.1);
+}
+
+/* Drawer Backdrop */
 .drawer-backdrop {
-    display: none;
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 15, 30, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
 }
 
+.drawer-backdrop.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Drawer */
 .drawer {
-    display: none;
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: -280px;
+    width: 280px;
+    height: 100vh;
+    height: 100dvh;
+    background: var(--bg-card);
+    border-left: 1px solid var(--border);
+    z-index: 1001;
+    padding: 24px;
+    flex-direction: column;
+    gap: 30px;
+    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+}
+
+.drawer.open {
+    right: 0;
+}
+
+.drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 15px;
+}
+
+.drawer-header h3 {
+    font-size: 20px;
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.drawer-close-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.drawer-close-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-primary);
+    border-color: var(--accent);
+}
+
+.drawer-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.drawer-link {
+    display: block;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 12px;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.drawer-link:hover {
+    background: var(--bg-hover);
+    color: var(--accent);
+    padding-left: 18px;
+}
+
+.drawer-link.active {
+    color: var(--accent);
+    background: rgba(0, 217, 255, 0.05);
+    font-weight: 700;
 }
 
 nav {
@@ -842,117 +955,16 @@ footer a:hover {
         z-index: 10;
         padding-left: 15px;
         transition: color 0.3s ease;
+        margin-left: 0;
+        transform: none;
     }
 
     .hamburger-btn:hover {
         color: var(--accent);
+        transform: none;
     }
 
-    /* Drawer Backdrop */
-    .drawer-backdrop {
-        display: block;
-        position: fixed;
-        inset: 0;
-        background: rgba(10, 15, 30, 0.7);
-        backdrop-filter: blur(4px);
-        z-index: 1000;
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.3s ease;
-    }
 
-    .drawer-backdrop.open {
-        opacity: 1;
-        pointer-events: auto;
-    }
-
-    /* Drawer */
-    .drawer {
-        display: flex;
-        position: fixed;
-        top: 0;
-        right: -280px;
-        width: 280px;
-        height: 100vh;
-        height: 100dvh;
-        background: var(--bg-card);
-        border-left: 1px solid var(--border);
-        z-index: 1001;
-        padding: 24px;
-        flex-direction: column;
-        gap: 30px;
-        transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
-    }
-
-    .drawer.open {
-        right: 0;
-    }
-
-    .drawer-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-bottom: 1px solid var(--border);
-        padding-bottom: 15px;
-    }
-
-    .drawer-header h3 {
-        font-size: 20px;
-        color: var(--text-primary);
-        font-weight: 700;
-    }
-
-    .drawer-close-btn {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid var(--border);
-        color: var(--text-secondary);
-        padding: 6px 14px;
-        border-radius: 20px;
-        font-size: 14px;
-        font-weight: 600;
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        cursor: pointer;
-        transition: all 0.2s;
-    }
-
-    .drawer-close-btn:hover {
-        background: rgba(255, 255, 255, 0.1);
-        color: var(--text-primary);
-        border-color: var(--accent);
-    }
-
-    .drawer-menu {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-    }
-
-    .drawer-link {
-        display: block;
-        color: var(--text-secondary);
-        text-decoration: none;
-        font-size: 16px;
-        font-weight: 500;
-        padding: 10px 12px;
-        border-radius: 8px;
-        transition: all 0.2s;
-    }
-
-    .drawer-link:hover {
-        background: var(--bg-hover);
-        color: var(--accent);
-        padding-left: 18px;
-    }
-
-    .drawer-link.active {
-        color: var(--accent);
-        background: rgba(0, 217, 255, 0.05);
-        font-weight: 700;
-    }
 
     .zigzag-item {
         left: 0;
