@@ -26,9 +26,9 @@
                         <img src="img/user.png" alt="User">
                     </a>
                 </li>
-                <li><a href="#mobility" class="nav-link">모빌리티 서비스</a></li>
+                <li><a href="#mobility" class="nav-link">모빌리티 서비스 & 교통 인프라 생태계</a></li>
                 <li><a href="#farming" class="nav-link">든든농사</a></li>
-                <li><a href="#cooking" class="nav-link">요리가 즐거워</a></li>
+                <li><a href="#gourmet-planning" class="nav-link">미식기획</a></li>
                 <li><a href="https://github.com/wlsgns9607-blip" target="_blank" rel="noopener noreferrer" class="nav-link"><i class="fab fa-github"></i> GitHub</a></li>
             </ul>
             <button class="hamburger-btn" id="hamburger-btn" aria-label="메뉴 열기">
@@ -145,10 +145,11 @@
         </div>
     </section>
 
-    <!-- 모빌리티 서비스 섹션 -->
+    <!-- 모빌리티 서비스 & 교통 인프라 생태계 섹션 -->
     <section id="mobility">
-        <h2 class="reveal">모빌리티 서비스</h2>
-        <div class="projects-grid">
+        <h2 class="reveal">모빌리티 서비스 & 교통 인프라 생태계</h2>
+        <div class="mobility-ecosystem-wrapper reveal" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 24px; padding: 40px; margin-top: 20px;">
+            <div class="projects-grid">
             <!-- 골든패스 -->
             <div class="project-card reveal" style="display: block;" id="fireengine">
                 <div class="project-content" style="padding: 40px; text-align: center; width: 100%; max-width: 100%; box-sizing: border-box;">
@@ -203,7 +204,7 @@
             <div class="project-card reveal" style="display: block;" id="cardoctor">
                 <div class="project-content" style="padding: 40px; text-align: center; width: 100%; max-width: 100%; box-sizing: border-box;">
                     <h3>카닥터 (Carpo)</h3>
-                    <p style="margin: 0 auto; line-height: 1.8; color: var(--text-secondary); max-width: 900px;">자동차과 및 세차 현업 경험을 바탕으로 조진훈 개발자가 기획·제작한 AI 차량 케어 플랫폼입니다. 운전자가 소리나 냄새로 증상을 말하면 AI가 원인을 진단하고, 과잉 정비를 막는 '바가지 방지 카드'와 '수리비 비교 계산기'를 제공합니다. 불법 렉카 신고 기능도 갖췄으며, 추후 AI 음성 진단 및 카플레이 연동 확장을 목표로 합니다</p>
+                    <p style="margin: 0 auto; line-height: 1.8; color: var(--text-secondary); max-width: 900px;">차량 관리의 새로운 패러다임을 제시하는 스마트 솔루션 프로젝트 '카닥터'입니다.</p>
                     <div class="project-buttons" style="justify-content: center; margin-top: 30px;">
                         <a href="https://wlsgns9607-blip.github.io/cardoctor_001/" target="_blank" rel="noopener noreferrer" class="car-app-link" data-tooltip="앱 체험하기">
                             <img src="img/car.png" alt="앱 체험하기" class="car-app-img" style="height: 48px; width: 48px; border-radius: 12px; background: white;">
@@ -220,7 +221,73 @@
                     </div>
                 </div>
             </div>
+
+            <!-- 코레일톡 서비스 기획 -->
+            <div class="project-card reverse reveal" style="display: block;">
+                <div class="project-content" style="padding: 40px; text-align: center; width: 100%; max-width: 100%; box-sizing: border-box;">
+                    <h3>코레일톡 서비스 기획 · 현장 VOC 기반</h3>
+                    <p style="margin: 0 auto; line-height: 1.8; color: var(--text-secondary); max-width: 900px;"><strong style="color: var(--accent);">KTX 현장에서 40대 이상 고령층의 실제 불편함(VOC)을 직접 관찰</strong>하고 도출한 <strong style="color: var(--accent);">온·오프라인 통합 서비스 기획</strong> 프로젝트입니다. 단순한 모바일 UI 수정을 넘어, 플랫폼 대형 모니터 및 차내 AI 태블릿 인프라까지 아우르는 진정한 <strong style="color: var(--accent);">유니버설 디자인 및 배리어프리(Barrier-Free) UX</strong>를 설계했습니다.</p>
+                    <div class="project-buttons" style="justify-content: center; margin-top: 30px;">
+                        <a href="https://wlsgns9607-blip.github.io/korail-barrier-free/" target="_blank" rel="noopener noreferrer" class="car-app-link" data-tooltip="포트폴리오 사이트 보기">
+                            <img src="img/por.png" alt="웹사이트" class="car-app-img" style="height: 48px; width: 48px; border-radius: 12px; background: white;">
+                        </a>
+                        <a href="https://github.com/wlsgns9607-blip/korail-barrier-free" target="_blank" rel="noopener noreferrer" class="car-app-link zigzag-item" data-tooltip="GitHub">
+                            <img src="img/gihub.png" alt="GitHub" class="car-app-img" style="height: 48px; width: 48px; border-radius: 12px;">
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <!-- AI 데이터 섹션 -->
+        <div class="ai-data-section" style="margin-top: 40px; padding: 40px; background: rgba(0, 0, 0, 0.2); border-radius: 16px; text-align: left;">
+            <h3 style="display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px; margin-bottom: 20px; font-size: 1.25rem;">
+                📈 AI 데이터 - Business Impact Projection (3-Year Horizon)
+            </h3>
+            <p style="color: var(--text-secondary); line-height: 1.6; margin-bottom: 30px; font-size: 0.95rem;">
+                본 통합 모빌리티 플랫폼(골든패스 × 카닥터 × 세차의 정석)은 개별 앱의 한계를 넘어, 상생 리워드 생태계를 통해 유입 비용(CAC)을 최소화하고 고객 평생 가치(LTV)를 극대화하는 선순환 구조를 가집니다.<br>
+                AI 시뮬레이션을 통해 도출된 핵심 비즈니스 지표는 다음과 같습니다.
+            </p>
+            
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; min-width: 600px; text-align: left; font-size: 0.95rem;">
+                    <thead>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.2); color: var(--text-secondary);">
+                            <th style="padding: 15px 10px; font-weight: normal;">핵심 비즈니스 엔진</th>
+                            <th style="padding: 15px 10px; font-weight: normal;">연간 예상 매출 (Y3 기준)</th>
+                            <th style="padding: 15px 10px; font-weight: normal;">비즈니스 시너지 효과 (Synergy Impact)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 20px 10px; color: #fff;">🚨 <strong>골든패스</strong> (V2X 공익 플랫폼)</td>
+                            <td style="padding: 20px 10px; font-weight: 700;">36.5억 원</td>
+                            <td style="padding: 20px 10px; color: var(--text-secondary); line-height: 1.5;">ESG 기업 제휴 및 리워드 연계를 통한<br>무상 유저 유입 채널 작동</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 20px 10px; color: #fff;">🧼 <strong>세차의 정석</strong> (무인 체크인)</td>
+                            <td style="padding: 20px 10px; font-weight: 700;">42.0억 원</td>
+                            <td style="padding: 20px 10px; color: var(--text-secondary); line-height: 1.5;">골든패스 리워드(뱃지) 소비처 확보 및<br>결제 락인(Lock-in) 효과</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <td style="padding: 20px 10px; color: #fff;">🔧 <strong>카닥터</strong> (자가진단 정비 매칭)</td>
+                            <td style="padding: 20px 10px; font-weight: 700;">36.0억 원</td>
+                            <td style="padding: 20px 10px; color: var(--text-secondary); line-height: 1.5;">소리 진단 신뢰도 기반의 고단가 정비<br>수수료 매출 극대화</td>
+                        </tr>
+                        <tr style="background: rgba(16, 185, 129, 0.1);">
+                            <td style="padding: 20px 10px; color: var(--accent); font-weight: 700;">🔥 통합 시너지 합계</td>
+                            <td style="padding: 20px 10px; color: var(--accent); font-weight: 700;">총 114.5억 원</td>
+                            <td style="padding: 20px 10px; color: var(--accent); font-weight: 700;">예상 영업이익률 약 35% 달성</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.05); border-radius: 12px; font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; border-left: 4px solid var(--accent);">
+                <strong>"이 모든 수치는 대한민국 등록 차량 2,600만 대 및 실제 정비/세차 시장 파이를 기반으로 철저하게 검증된 시뮬레이션 데이터입니다. 랜딩 페이지에서 보여드리는 기획은 이 거대한 비즈니스 로드맵의 '시작'에 불과합니다."</strong>
+            </div>
+        </div>
+    </div>
     </section>
 
     <!-- Heroes 섹션 -->
@@ -244,33 +311,16 @@
         </div>
     </section>
 
-    <!-- 코레일톡 서비스 기획 섹션 -->
-    <section id="korail">
-        <h2 class="reveal">코레일톡 서비스 기획</h2>
-        <div class="projects-grid">
-            <div class="project-card reverse reveal" style="display: block;">
-                <div class="project-content" style="padding: 40px; text-align: center; width: 100%; max-width: 100%; box-sizing: border-box;">
-                    <h3>코레일톡 서비스 기획 · 현장 VOC 기반</h3>
-                    <p style="margin: 0 auto; line-height: 1.8; color: var(--text-secondary); max-width: 900px;"><strong style="color: var(--accent);">KTX 현장에서 40대 이상 고령층의 실제 불편함(VOC)을 직접 관찰</strong>하고 도출한 <strong style="color: var(--accent);">온·오프라인 통합 서비스 기획</strong> 프로젝트입니다. 단순한 모바일 UI 수정을 넘어, 플랫폼 대형 모니터 및 차내 AI 태블릿 인프라까지 아우르는 진정한 <strong style="color: var(--accent);">유니버설 디자인 및 배리어프리(Barrier-Free) UX</strong>를 설계했습니다.</p>
-                    <div class="project-buttons" style="justify-content: center; margin-top: 30px;">
-                        <a href="https://wlsgns9607-blip.github.io/korail-barrier-free/" target="_blank" rel="noopener noreferrer" class="car-app-link" data-tooltip="포트폴리오 사이트 보기">
-                            <img src="img/por.png" alt="웹사이트" class="car-app-img" style="height: 48px; width: 48px; border-radius: 12px; background: white;">
-                        </a>
-                        <a href="https://github.com/wlsgns9607-blip/korail-barrier-free" target="_blank" rel="noopener noreferrer" class="car-app-link zigzag-item" data-tooltip="GitHub">
-                            <img src="img/gihub.png" alt="GitHub" class="car-app-img" style="height: 48px; width: 48px; border-radius: 12px;">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
 
 
-    <!-- 미식플레너 섹션 -->
-    <section id="gourmet">
-        <h2 class="reveal">미식플레너</h2>
-        <div class="projects-grid">
+
+    <!-- 미식기획 섹션 -->
+    <section id="gourmet-planning">
+        <h2 class="reveal">미식기획</h2>
+        <div class="gourmet-ecosystem-wrapper reveal" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 24px; padding: 40px; margin-top: 20px;">
+            <div class="projects-grid">
+            <!-- 미식플레너 -->
             <div class="project-card reveal">
                 <!-- img 폴더에 미식플레너 관련 이미지가 있다면 파일명을 변경해주세요 -->
                 <img src="img/misig.png" alt="미식플레너 이미지" class="project-image" style="background: rgba(0,0,0,0.05); padding: 20px;">
@@ -293,13 +343,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- 요리가 즐거워 섹션 -->
-    <section id="cooking">
-        <h2 class="reveal">요리가 즐거워</h2>
-        <div class="projects-grid">
+            <!-- 요리가 즐거워 -->
             <div class="project-card reverse reveal">
                 <img src="img/uiuo.png" alt="요리가 즐거워 기기 이미지" class="project-image" style="background: rgba(122,46,26,0.05); padding: 20px;">
                 <div class="project-content">
@@ -321,13 +366,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- 플래닛 키친 섹션 -->
-    <section id="plannet">
-        <h2 class="reveal">플래닛 키친 (PLANNET Kitchen)</h2>
-        <div class="projects-grid">
+            <!-- 플래닛 키친 -->
             <div class="project-card reveal" style="display: block;">
                 <div class="project-content" style="padding: 40px; text-align: center; width: 100%; max-width: 100%; box-sizing: border-box;">
                     <h3>플래닛 키친 (PLANNET Kitchen)</h3>
@@ -341,6 +381,7 @@
                         </a>
                     </div>
                 </div>
+            </div>
             </div>
         </div>
     </section>
@@ -442,12 +483,10 @@
             </button>
         </div>
         <ul class="drawer-menu">
-            <li><a href="#mobility" class="drawer-link">모빌리티 서비스</a></li>
+            <li><a href="#mobility" class="drawer-link">모빌리티 서비스 & 교통 인프라 생태계</a></li>
             <li><a href="#heroes" class="drawer-link">Heroes</a></li>
-            <li><a href="#korail" class="drawer-link">코레일톡 서비스 기획</a></li>
-            <li><a href="#gourmet" class="drawer-link">미식플레너</a></li>
-            <li><a href="#cooking" class="drawer-link">요리가 즐거워</a></li>
-            <li><a href="#plannet" class="drawer-link">PLANNET</a></li>
+
+            <li><a href="#gourmet-planning" class="drawer-link">미식기획</a></li>
             <li><a href="#bubble" class="drawer-link">Bubble Mate</a></li>
             <li><a href="#farming" class="drawer-link">든든농사</a></li>
             <li><a href="#commutefit" class="drawer-link">CommuteFit</a></li>
