@@ -119,6 +119,79 @@
    - `Intersection Observer API`를 활용하여 스크롤 위치에 따라 요소가 부드럽게 나타나는 동적 애니메이션 효과.
 3. **Z패턴 레이아웃**
    - 프로젝트 카드들의 위치를 교차시켜(좌우 반전) 시각적인 피로감을 줄이고 지루함을 탈피.
+# 🚀 CHO JIN HOON — PORTFOLIO
+### "현장의 감각을 코드로, 기술을 통해 삶의 효율을 혁신합니다."
+> **자동차학과 출신 x 현장 오프라인 운영 경험 x React/AI 협업 개발**
+> 단순한 화면 작성을 넘어, 실제 현장의 페인포인트를 타겟팅하고 사회적 가치와 비즈니스 BM까지 완성하는 프론트엔드 개발자 & PM입니다.
+
+---
+
+## 🛠 TECH STACK & CORE COMPETENCIES
+- **Core:** React 18, TypeScript, Vite, HTML5/CSS3, JavaScript
+- **Styling & Motion:** CSS Variables, Custom Design System, Tailwind CSS, Framer Motion
+- **State & Infrastructure:** Firebase (Auth/Firestore), Context API, Web Speech API, MediaRecorder API
+- **AI Engine Collaboration:** Google Gemini 1.5 Flash SDK, Claude, Google AI Studio
+
+---
+
+## 🏛️ FEATURED PROJECTS (포트폴리오 5대장)
+
+### 01. 🚗 카닥터 (Cardoctor) — AI 정비 주치의 & 정비소 매칭 플랫폼
+> **"차알못도 당당하게, 바가지는 이제 그만"**
+* **Type:** React 18, GPS Location API, Context API, MediaRecorder API
+* **Problem & Solution:**
+  - **증상 설명 불가:** 소리/냄새/느낌 키워드 매핑 AI 진단 및 제출용 바가지 방지 카드 자동 생성
+  - **탐색 동선 복잡:** 불필요한 타사 브랜드 명칭 제거 ➔ GPS 좌표 기반 '내 주변 정비소' 3단계 원클릭 견적 연결
+  - **수입차 과잉 정비:** 외제차 전담 카센타 카테고리 + 관리자(Admin) 리뷰/별점 기반 실력파 업체 상위 랭킹 알고리즘
+* **Next Vision:** Android Auto / Apple CarPlay 연동 — 소음 주파수 분석 ➔ 인근 정비소 POS 직통 하이패스 리포트 전송 (Hands-Free AI Voice UX)
+
+---
+
+### 02. 🧼 세차의 정석 (The Art of Car Wash) — AI 세차 컨시어지
+> **"디테일링 2년 노하우를 데이터화한 지능형 하이엔드 카케어 솔루션"**
+* **Type:** React 18, TypeScript, Vite, Framer Motion, Gemini 1.5 Flash SDK, Firebase
+* **Problem & Solution:**
+  - **오염도 판단/시간 계산 한계:** Google Gemini 1.5 Flash 비전 모델 연동 ➔ 차량 사진 실시간 분석으로 오염도 측정 & 차종별 세차 소요 시간 산출
+  - **대기 시간 및 진입 장벽:** OpenWeather 실시간 세차 지수 + 네이버/카카오 지도 원터치 딥링크 제공
+  - **어드민 관제 시스템:** 특정 관리자 계정 RBAC 권한 기반 실시간 리뷰/상담 모니터링
+* **Next Vision:** 서울 중심 거점 선결제 인프라 + Android Auto / Apple CarPlay 50m 지오펜싱(Geofencing) 무인 자동 체크인 시스템
+
+---
+
+### 03. 🚆 코레일톡 배리어프리 — 온·오프라인 통합 이동 서비스
+> **"40대 이상·고령층 승객의 현장 VOC 기반 이동 여정 재설계"**
+* **Type:** Interactive Web Demo, Web Speech API (TTS), Vanilla JS, CSS3 SVG Design
+* **Problem & Solution:**
+  - **화면 중심 접근성 한계 극복:** 단순 글자 확대가 아닌 '앱 UX ➔ 승강장 모니터 ➔ 열차 내부 태블릿'으로 이어지는 전체 탑승 동선 재설계
+  - **사전 예방형 인터랙티브 UX:** 탑승 전 좌석 하이라이트 및 음성 안내 재생, 버튼 실시간 확장 실버 모드 토글, 차칸 AI 승무원 화상 연결 데모 구현
+* **Business Impact:** 현장 승무원 업무 과중 해소, 정시성 확보, ESG(사회) 지표 상승과 연결된 정량적 비즈니스 논리 제시
+
+---
+
+### 04. 🌾 든든농사 (Smart Agri-Tech Platform) — 시니어 맞춤 영농 파트너
+> **"말 한마디로 기록하고 큰 글씨로 관리하는 어르신 맞춤형 스마트 영농 솔루션"**
+* **Type:** Web App / AI Collaboration (Gemini x Claude x Google AI Studio) / G2C & D2C
+* **Problem & Solution:**
+  - **영농일지 입력 부담:** "오늘 비료 줬다" 말 한마디로 자동 기록되는 Voice-to-Data AI 시스템
+  - **디지털 소외 해소:** 일반 앱 대비 1.5배 시니어 특화 UI + 직관적인 한글 중심 시각 가이드 제공
+  - **유통 구조 혁신:** D2C 산지 직송 매칭 + 우체국/지자체 물류망 연동 3단계 유통마진 절감 모델 설계
+
+---
+
+### 05. 🍷 Silent Gourmet — 데이터 기반 내향인 미식 매칭 플랫폼
+> **"취향은 공유하되 거리는 유지하는 내향인을 위한 데이터 기반 미식 플랫폼"**
+* **Type:** Web App / AI Culinary Scheduling / B2B2C Architecture
+* **Problem & Solution:**
+  - **소셜 다이닝 피로감:** 대화 없이 음식만 공유하는 Silent Mode 매칭 및 Taste Radar 미각 취향 분석
+  - **재야의 장인 B2B 엔진:** 파인다이닝 AI 타임테이블 자동 생성 + 소리 없는 대기 UX (The Silent Wait Sync)
+  - **B2B2C 가전 협업 제안:** LG전자 BS & H&A 사업본부 연동 AI 주방 냉장고 스크린 (식재료 골든타임 & FIFO 시스템)
+
+---
+
+## 👨💻 ABOUT DEVELOPER
+* **이름:** 조진훈 (Frontend Developer & PM)
+* **Contact:** wlsgns9607@gmail.com
+* **GitHub:** [github.com/wlsgns9607-blip](https://github.com/wlsgns9607-blip)
 
 ---
 
